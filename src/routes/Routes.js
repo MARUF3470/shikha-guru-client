@@ -18,6 +18,10 @@ const router = createBrowserRouter([
                 children: [
                     {
                         path: '/courses/:id',
+                        loader: ({ params }) => {
+                            return fetch(`http://localhost:5000/subjects/${params.id}`)
+                        },
+
                         element: <CoursesField></CoursesField>
                     }
                 ]
