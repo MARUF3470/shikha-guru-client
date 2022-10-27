@@ -1,3 +1,4 @@
+import Blog from "../components/Blog/Blog";
 import Courses from "../components/Courses/Courses";
 import CoursesField from "../components/Courses/CoursesField/CoursesField";
 import Subject from "../components/Courses/Subject/Subject";
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             }
         ]
     }

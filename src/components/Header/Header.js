@@ -11,7 +11,7 @@ const Header = () => {
     const handleLogout = () => {
         logOut()
             .then(() => {
-                //console.log("casfaf")
+                console.log("casfaf")
                 window.location.reload()
             })
             .catch(error => console.log(error))
@@ -32,7 +32,7 @@ const Header = () => {
                                 </Link>
 
                             </li>
-                            <li><Link className='btn btn-ghost justify-start'>Blog</Link></li>
+                            <li><Link className='btn btn-ghost justify-start' to='/blog'>Blog</Link></li>
                             <li><Link className='btn btn-ghost justify-start'>FAQ</Link></li>
                             <div className=''>
                                 {
@@ -53,7 +53,7 @@ const Header = () => {
                                 Courses
                             </Link>
                         </li>
-                        <li><Link className="btn btn-ghost">Blog</Link></li>
+                        <li><Link className="btn btn-ghost" to='/blog'>Blog</Link></li>
                         <li><Link className="btn btn-ghost">FAQ</Link></li>
 
                         <div className=''>
