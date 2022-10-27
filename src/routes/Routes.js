@@ -1,5 +1,6 @@
 import Courses from "../components/Courses/Courses";
 import CoursesField from "../components/Courses/CoursesField/CoursesField";
+import Subject from "../components/Courses/Subject/Subject";
 import Home from "../components/Home/Home";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
                         element: <CoursesField></CoursesField>
                     }
                 ]
+            },
+            {
+                path: '/courses/:id/subject/:id',
+                element: <Subject></Subject>
             }
         ]
     }

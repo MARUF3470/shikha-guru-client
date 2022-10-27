@@ -1,7 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Subjects = ({ subject }) => {
-    const { balance, name, picture } = subject
+    const { balance, name, picture, subjectID } = subject
+    const navigate = useNavigate()
+    const hanldeEnrollment = () => {
+        navigate(`subject/${subjectID}`)
+    }
     return (
         <div>
             <div className="card w-72 h-96 mb-5 glass">
@@ -10,7 +15,7 @@ const Subjects = ({ subject }) => {
                     <h2 className="card-title">{name}</h2>
                     <p>Enrollment money: {balance}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Learn now!</button>
+                        <button onClick={hanldeEnrollment} className="btn btn-primary">Learn now!</button>
                     </div>
                 </div>
             </div>
