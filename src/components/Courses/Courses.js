@@ -11,7 +11,7 @@ const Courses = () => {
             .then(res => res.json())
             .then(data => setCourses(data))
     }, [])
-    console.log(courses)
+    // console.log(courses)
     return (
         <div className='mt-6'>
             <div className='lg:grid lg:grid-cols-4 gap-4'>

@@ -7,10 +7,10 @@ const Subject = () => {
     const { balance, name } = subjectData
     return (
         <div>
-            <h1>{name}</h1>
-            <p>{balance}</p>
+            <h1 className='text-center text-2xl'>{name}</h1>
+            <p className='text-center text-lg'> Enrollment Money: {balance}</p>
         </div>
     );
 };
 
-export default Subject;
+export default Subject; 

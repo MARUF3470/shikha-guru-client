@@ -15,7 +15,7 @@ const Subjects = ({ subject }) => {
                     <h2 className="card-title">{name}</h2>
                     <p>Enrollment money: {balance}</p>
                     <div className="card-actions justify-end">
-                        <button onClick={hanldeEnrollment} className="btn btn-primary">Learn now!</button>
+                        <button onClick={hanldeEnrollment} className="btn btn-primary">Enroll now!</button>
                     </div>
                 </div>
             </div>

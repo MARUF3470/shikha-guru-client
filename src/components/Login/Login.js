@@ -1,9 +1,13 @@
 import React from 'react';
 import { useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Login = () => {
     const { signinUser } = useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation()
+    let from = location.state?.from?.pathname || '/'
     const handleSignin = (event) => {
         event.preventDefault()
         const form = event.target;
@@ -15,6 +19,7 @@ const Login = () => {
                 const user = res.user;
                 console.log(user)
                 form.reset()
+                navigate(from, { replace: true })
             })
             .catch(error => console.error(error))
 
@@ -25,7 +30,7 @@ const Login = () => {
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Login now!</h1>
-                        <p className="py-6">Login to your account.</p>
+                        <p className="py-6">Login to your account. if you are not have an account, <Link to='/register' className='btn btn-link'>Register</Link></p>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className="card-body">

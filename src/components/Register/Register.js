@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Register = () => {
@@ -46,6 +47,7 @@ const Register = () => {
                     <div className="text-center lg:text-left ml-3">
                         <h1 className="text-5xl font-bold">Register now!</h1>
                         <p className="py-6">If you don't have any account on our website, please do registretion first.</p>
+                        <p>Allready have an account? <Link to='/login' className='btn btn-link'>Login</Link></p>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className="card-body">

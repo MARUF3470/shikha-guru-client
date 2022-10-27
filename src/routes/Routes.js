@@ -4,6 +4,7 @@ import Subject from "../components/Courses/Subject/Subject";
 import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../Layout/Main");
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
                 loader: ({ params }) => {
                     return fetch(`http://localhost:5000/subject/${params.id}`)
                 },
-                element: <Subject></Subject>
+                element: <PrivateRoute><Subject></Subject></PrivateRoute>
             },
             {
                 path: '/login',
