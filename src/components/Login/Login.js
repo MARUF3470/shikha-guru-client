@@ -4,7 +4,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Login = () => {
-    const { signinUser } = useContext(AuthContext)
+    const { signinUser, googleSignin, githubSignIn } = useContext(AuthContext)
+
     const navigate = useNavigate()
     const location = useLocation()
     let from = location.state?.from?.pathname || '/'
@@ -20,6 +21,22 @@ const Login = () => {
                 console.log(user)
                 form.reset()
                 navigate(from, { replace: true })
+            })
+            .catch(error => console.error(error))
+
+    }
+    const handleGoogleSignIn = () => {
+        googleSignin()
+            .then(res => {
+                const user = res.user
+
+            })
+            .catch(error => console.error(error))
+    }
+    const handleGithubSignIn = () => {
+        githubSignIn()
+            .then(res => {
+                const user = res.user
             })
             .catch(error => console.error(error))
 
@@ -52,10 +69,18 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>
+
+                        </div>
+                        <div className="form-control mt-6">
+                            <button className="btn btn-primary" onClick={handleGoogleSignIn}>Google sign in</button>
+                        </div>
+                        <div className="form-control mt-6">
+                            <button className="btn btn-primary" onClick={handleGithubSignIn}>Github sign in</button>
                         </div>
                     </div>
                 </div>
             </form>
+
         </div >
     );
 };
