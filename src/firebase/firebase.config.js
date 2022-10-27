@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDG8xJ_1gVN1sJPAMOtal3XQSSFDTN2zzE",
-    authDomain: "shikkha-guru-client.firebaseapp.com",
-    projectId: "shikkha-guru-client",
-    storageBucket: "shikkha-guru-client.appspot.com",
-    messagingSenderId: "943395819506",
-    appId: "1:943395819506:web:dd604407238ee8719f256b"
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId
 };
 
 // Initialize Firebase
