@@ -13,13 +13,15 @@ const Header = () => {
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><Link className='btn btn-ghost justify-start' to='/home'>Home</Link></li>
                             <li tabIndex={0}>
-                                <Link className=" btn btn-ghost justify-start">
+                                <Link className=" btn btn-ghost justify-start" to='/courses'>
                                     Course
                                 </Link>
 
                             </li>
                             <li><Link className='btn btn-ghost justify-start'>Blog</Link></li>
                             <li><Link className='btn btn-ghost justify-start'>FAQ</Link></li>
+                            <li><Link className='btn btn-ghost justify-start' to='/login'>Login</Link></li>
+                            <li><Link className='btn btn-ghost justify-start' to='/register'>Register</Link></li>
                         </ul>
                     </div>
                     <Link className="btn btn-ghost normal-case text-xl"><GiBookshelf className='mr-1'></GiBookshelf>Shikhha Guru</Link>
@@ -34,6 +36,8 @@ const Header = () => {
                         </li>
                         <li><Link className="btn btn-ghost">Blog</Link></li>
                         <li><Link className="btn btn-ghost">FAQ</Link></li>
+                        <li><Link className='btn btn-ghost justify-start' to='/login'>Login</Link></li>
+                        <li><Link className='btn btn-ghost justify-start' to='/register'>Register</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">

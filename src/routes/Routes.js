@@ -2,6 +2,8 @@ import Courses from "../components/Courses/Courses";
 import CoursesField from "../components/Courses/CoursesField/CoursesField";
 import Subject from "../components/Courses/Subject/Subject";
 import Home from "../components/Home/Home";
+import Login from "../components/Login/Login";
+import Register from "../components/Register/Register";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../Layout/Main");
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
                     return fetch(`http://localhost:5000/subject/${params.id}`)
                 },
                 element: <Subject></Subject>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
             }
         ]
     }

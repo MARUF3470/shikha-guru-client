@@ -13,7 +13,7 @@ const Courses = () => {
     }, [])
     console.log(courses)
     return (
-        <div className='w-full'>
+        <div className='mt-6'>
             <div className='lg:grid lg:grid-cols-4 gap-4'>
                 <div className="mx-auto my-2">
                     {
