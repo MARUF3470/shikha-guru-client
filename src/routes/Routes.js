@@ -29,6 +29,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/courses/:id/subject/:id',
+                loader: ({ params }) => {
+                    return fetch(`http://localhost:5000/subject/${params.id}`)
+                },
                 element: <Subject></Subject>
             }
         ]
