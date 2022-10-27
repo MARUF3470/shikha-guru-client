@@ -13,9 +13,9 @@ const Courses = () => {
     }, [])
     console.log(courses)
     return (
-        <div>
-            <div className='grid grid-cols-4 gap-4'>
-                <div className="mx-auto">
+        <div className='w-full'>
+            <div className='lg:grid lg:grid-cols-4 gap-4'>
+                <div className="mx-auto my-2">
                     {
                         courses?.map(course => <Course course={course} key={course.id}></Course>)
                     }
