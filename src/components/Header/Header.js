@@ -33,7 +33,7 @@ const Header = () => {
 
                             </li>
                             <li><Link className='btn btn-ghost justify-start' to='/blog'>Blog</Link></li>
-                            <li><Link className='btn btn-ghost justify-start'>FAQ</Link></li>
+                            <li><Link className='btn btn-ghost justify-start' to='/faq'>FAQ</Link></li>
                             <div className=''>
                                 {
                                     user?.uid ? <div className='mt-2'><img className="w-10 mr-1 rounded-full inline " title={displayName} src={photoURL} alt="" />
@@ -54,7 +54,7 @@ const Header = () => {
                             </Link>
                         </li>
                         <li><Link className="btn btn-ghost" to='/blog'>Blog</Link></li>
-                        <li><Link className="btn btn-ghost">FAQ</Link></li>
+                        <li><Link className="btn btn-ghost" to='faq'>FAQ</Link></li>
 
                         <div className=''>
                             {

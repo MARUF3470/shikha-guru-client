@@ -24,7 +24,7 @@ const router = createBrowserRouter([
                     {
                         path: '/courses/:id',
                         loader: ({ params }) => {
-                            return fetch(`http://localhost:5000/subjects/${params.id}`)
+                            return fetch(` https://shikhha-guru-server.vercel.app/subjects/${params.id}`)
                         },
 
                         element: <CoursesField></CoursesField>
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
             {
                 path: '/courses/:id/subject/:id',
                 loader: ({ params }) => {
-                    return fetch(`http://localhost:5000/subject/${params.id}`)
+                    return fetch(` https://shikhha-guru-server.vercel.app/subject/${params.id}`)
                 },
                 element: <PrivateRoute><Subject></Subject></PrivateRoute>
             },
