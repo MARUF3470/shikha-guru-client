@@ -18,18 +18,26 @@ const Register = () => {
             return;
         }
         console.log(email, password, name, photo)
-        const profile = { name, photo }
-        updateUserProfile(profile)
-            .then(() => { })
-            .catch(error => console.log(error))
+
+
         registretion(email, password)
             .then(result => {
                 const user = result.user
                 console.log(user)
                 form.reset()
                 setError('')
+                handleUserProfile(name, photo)
             })
             .catch(error => console.error(error))
+    }
+    const handleUserProfile = (name, photo) => {
+        const profile = {
+            displayName: name,
+            photoURL: photo
+        }
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(error => console.log(error))
     }
     return (
         <div>
