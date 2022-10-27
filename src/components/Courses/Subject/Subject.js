@@ -4,11 +4,20 @@ import { useLoaderData } from 'react-router-dom';
 const Subject = () => {
     const subjectData = useLoaderData()
     console.log(subjectData)
-    const { balance, name } = subjectData
+    const { balance, name, picture } = subjectData
     return (
         <div>
-            <h1 className='text-center text-2xl'>{name}</h1>
-            <p className='text-center text-lg'> Enrollment Money: {balance}</p>
+            <div className="hero min-h-screen" style={{ backgroundImage: `url(${picture})` }}>
+                <div className="hero-overlay bg-opacity-60"></div>
+                <div className="hero-content text-center text-neutral-content">
+                    <div className="max-w-md">
+                        <h1 className="mb-5 text-5xl font-bold">{name}</h1>
+                        <p className="mb-5 text-2xl">{balance}</p>
+
+                        <button className="btn btn-primary">PDF</button>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

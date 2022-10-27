@@ -29,7 +29,7 @@ const Login = () => {
         googleSignin()
             .then(res => {
                 const user = res.user
-
+                navigate(from, { replace: true })
             })
             .catch(error => console.error(error))
     }
@@ -37,6 +37,7 @@ const Login = () => {
         githubSignIn()
             .then(res => {
                 const user = res.user
+                navigate(from, { replace: true })
             })
             .catch(error => console.error(error))
 

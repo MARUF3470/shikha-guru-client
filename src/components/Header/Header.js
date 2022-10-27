@@ -10,7 +10,10 @@ const Header = () => {
     //const { photoURL } = user
     const handleLogout = () => {
         logOut()
-            .then(() => { })
+            .then(() => {
+                //console.log("casfaf")
+                window.location.reload()
+            })
             .catch(error => console.log(error))
     }
     return (

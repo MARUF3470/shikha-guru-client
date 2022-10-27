@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Register = () => {
     const { registretion, updateUserProfile } = useContext(AuthContext)
     const [error, setError] = useState(null)
+    const navigate = useNavigate()
+    const location = useLocation()
+    let from = location.state?.from?.pathname || '/'
     const handleRegistretion = (event) => {
         event.preventDefault()
         const form = event.target;
@@ -28,6 +31,8 @@ const Register = () => {
                 form.reset()
                 setError('')
                 handleUserProfile(name, photo)
+                navigate(from, { replace: true })
+
             })
             .catch(error => console.error(error))
     }
@@ -82,9 +87,6 @@ const Register = () => {
                                 <input type="password" name='confirm' placeholder="confirm password" className="input input-bordered" required />
                                 <label className="label">
                                     <p className='text-red-500'>{error}</p>
-                                </label>
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
